@@ -44,5 +44,6 @@ p {
 
 .super_outer_container {
   max-height: 98vh;
+  min-width: 541px;
   overflow: auto;
 }
