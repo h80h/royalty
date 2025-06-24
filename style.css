@@ -39,11 +39,12 @@ p {
   width: 521px;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 3px;
   margin-bottom: 20px;
 }
 
 .super_outer_container {
-  max-height: 98vh;
-  min-width: 541px;
+  max-height: 99vh;
+  width: min(100vw, 536px);
   overflow: auto;
 }
