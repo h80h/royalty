@@ -22,7 +22,7 @@ img {
   height: 100%-15px;
 }
 
-img:hover {
+.container img:hover {
   margin-top: -2px;
   transform: scale(1.015);
 }
@@ -47,4 +47,17 @@ p {
   max-height: 99vh;
   width: min(100vw, 536px);
   overflow: auto;
+}
+
+dialog {
+  width: 35vw;
+  height: 85vh;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 0.7rem;
+}
+
+.container:hover {
+  cursor: grab;
 }
