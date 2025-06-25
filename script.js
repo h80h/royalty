@@ -13,7 +13,7 @@ imgs.forEach(img => {
         currentElementId = lastNumber;
         console.log('Selected element ID:', currentElementId);
 
-        const url = `http://127.0.0.1:3000/opensea/${currentElementId}`;
+        const url = `/api/opensea/${currentElementId}`;
         
         const dialog_img = document.createElement("img");
         
