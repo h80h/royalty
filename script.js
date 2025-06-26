@@ -33,7 +33,8 @@ imgs.forEach(img => {
             
             dialog_img.src = img.src;
             dialog.prepend(dialog_img);
-            dialog.innerHTML += `<pre>${JSON.stringify(cleanAttributes, null, 4)}</pre>`;
+            dialog.innerHTML += `<label for="img">Kemonokaki #${currentElementId}</label>
+            <pre>${JSON.stringify(cleanAttributes, null, 4)}</pre>`;
           })
           .catch(err => {
             console.error(err);
