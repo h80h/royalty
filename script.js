@@ -1,11 +1,12 @@
 const imgs = document.querySelectorAll("img");
 const dialog = document.querySelector("dialog");
+const dialog_div = document.querySelector("dialog div");
 let currentElementId = null;
 
 
 imgs.forEach(img => {
     img.addEventListener('click', function(event) {
-        dialog.innerHTML = "";
+        dialog_div.innerHTML = "";
         const img_url = img.src; 
         console.log(img_url);
         const numbers = img_url.match(/\d+/g);
@@ -24,21 +25,28 @@ imgs.forEach(img => {
             if (json.Error) {
               throw new Error(json.Error);
             }
-            
-            const attributes = json.nft.traits || json.nft.metadata?.attributes || [];
-            const cleanAttributes = attributes.map(attr => ({
-              trait_type: attr.trait_type,
-              value: attr.value
+
+          const attributes = json.nft.traits || json.nft.metadata?.attributes || [];
+          const cleanAttributes = attributes.map(attr => ({
+            trait_type: attr.trait_type,
+            value: attr.value
           }));
             
-            dialog_img.src = img.src;
-            dialog.prepend(dialog_img);
-            dialog.innerHTML += `<label for="img">Kemonokaki #${currentElementId}</label>
-            <pre>${JSON.stringify(cleanAttributes, null, 4)}</pre>`;
+          dialog_img.src = img.src;
+          dialog_div.prepend(dialog_img);
+
+          // Format attributes as readable text instead of JSON
+          const attributesText = cleanAttributes
+            .map(attr => `${attr.trait_type}: ${attr.value}`)
+            .join('\n');
+
+          dialog_div.innerHTML += `<label for="img">Kemonokaki #${currentElementId}</label>
+          <div style="font-family: monospace; white-space: pre-wrap; word-wrap: break-word;">${attributesText}</div>`;
           })
+
           .catch(err => {
             console.error(err);
-            dialog.innerHTML = `<p style="color: red;">Error loading NFT data: ${err.message}</p>`;
+            dialog_div.innerHTML = `<p style="color: red;">Error loading NFT data: ${err.message}</p>`;
           });
         
         dialog.addEventListener("click", e => {
