@@ -13,8 +13,8 @@ html, body {
 }
 
 .container {
-  width: 70px;
-  height: 85px;
+  width: 90px;
+  height: 105px;
 }
 
 img {
@@ -37,7 +37,7 @@ p {
 
 .outer_container {
   display: flex;
-  width: 521px;
+  width: 645px;
   gap: 20px;
   flex-wrap: wrap;
   margin-top: 3px;
@@ -46,28 +46,27 @@ p {
 
 .super_outer_container {
   max-height: 99vh;
-  width: min(100vw, 536px);
+  width: min(100vw, 660px);
   overflow: auto;
   display: flex;
-  justify-content: center
-
+  justify-content: center;
 }
 
 dialog {
-  width: 220px;
-  height: 360px;
+  width: 300px;
+  height: 500px;
   border-radius: 5px;
   border: none;
   outline: none;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   box-shadow: 2px 2px 5px 0px #999999;
   padding-top: 20px;
 }
 
 dialog img {
   display: block;
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 280px;
 }
 
 dialog div {
@@ -93,9 +92,35 @@ dialog div div {
   cursor: grab;
 }
 
-@media (max-width: 512px) {
+@media (max-width: 640px) {
   .outer_container {
-    width: 250px;
-    padding-top: 20px;
+    width: 320px;
+    gap: 25px;
+    padding-top: 40px;
+  }
+
+  .container {
+    width: 90px;
+    height: 115px;
+  }
+}
+
+@media (max-width: 960px) {
+  dialog {
+    width: 240px;
+    height: 400px;
+  }
+
+  dialog img {
+    width: 220px;
+    height: 220px;
+  }
+
+  dialog {
+    font-size: 0.75rem;
+  }
+
+  .last {
+    height: 180px;
   }
 }
