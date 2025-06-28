@@ -1,12 +1,12 @@
 const imgs = document.querySelectorAll("img");
 const dialog = document.querySelector("dialog");
-const dialog_div = document.querySelector("dialog div");
+const dialog_div_div = document.querySelector(".dialog_div_div");
 let currentElementId = null;
 
 
 imgs.forEach(img => {
     img.addEventListener('click', function(event) {
-        dialog_div.innerHTML = "";
+        dialog_div_div.innerHTML = "";
         const img_url = img.src; 
         console.log(img_url);
         const numbers = img_url.match(/\d+/g);
@@ -33,20 +33,20 @@ imgs.forEach(img => {
           }));
             
           dialog_img.src = img.src;
-          dialog_div.prepend(dialog_img);
+          dialog_div_div.prepend(dialog_img);
 
           // Format attributes as readable text instead of JSON
           const attributesText = cleanAttributes
             .map(attr => `${attr.trait_type}: ${attr.value}`)
             .join('\n');
 
-          dialog_div.innerHTML += `<label for="img">Kemonokaki #${currentElementId}</label>
+          dialog_div_div.innerHTML += `<p id="dialog_img_label">Kemonokaki #${currentElementId}</p>
           <div style="font-family: monospace; white-space: pre-wrap; word-wrap: break-word;">${attributesText}</div>`;
           })
 
           .catch(err => {
             console.error(err);
-            dialog_div.innerHTML = `<p style="color: red;">Error loading NFT data: ${err.message}</p>`;
+            dialog_div_div.innerHTML = `<p style="color: red;">Error loading NFT data: ${err.message}</p>`;
           });
         
         dialog.addEventListener("click", e => {

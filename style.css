@@ -23,14 +23,14 @@ img {
 }
 
 .container img:hover {
-  margin-top: -2px;
+  padding-top: -2px;
   transform: scale(1.015);
 }
 
 p {
   margin: 0;
   padding: 0;
-  font-size: 1.2ch;
+  font-size: 0.68rem;
   color: #666666;
   text-shadow: 0 0 3px lightblue;
 }
@@ -40,8 +40,8 @@ p {
   width: 645px;
   gap: 20px;
   flex-wrap: wrap;
-  margin-top: 3px;
-  margin-bottom: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .super_outer_container {
@@ -53,55 +53,49 @@ p {
 }
 
 dialog {
-  width: 300px;
-  height: 500px;
+  width: 280px;
+  height: 480px;
   border-radius: 5px;
   border: none;
   outline: none;
-  font-size: 0.9rem;
-  box-shadow: 2px 2px 5px 0px #999999;
-  padding-top: 20px;
+  box-shadow: 0 0 20px lightblue;
+  padding: 15px 5px;
 }
 
 dialog img {
   display: block;
-  width: 280px;
-  height: 280px;
+  width: 260px;
+  height: 260px;
 }
 
 dialog div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  background-color: #ffffff;
 }
 
-label {
+#dialog_img_label {
   color: #666666;
-  padding: 7px 0;
+  margin-top: 4px;
+  margin-bottom: 7px;
   text-shadow: 0 0 5px lightblue;
   font-weight: 500;
+  font-size: 0.8rem;
 }
 
-dialog div div {
-  align-self: flex-start;
-  padding-left: 10px;
+.dialog_div_div {
   color: #666666;
+  font-size: 0.9rem;
+  position: absolute;
+  left: 10px;
 }
 
 .container:hover {
   cursor: grab;
 }
 
-@media (max-width: 640px) {
-  .outer_container {
-    width: 320px;
-    gap: 25px;
-    padding-top: 40px;
-  }
-
-  .container {
-    width: 90px;
-    height: 115px;
+@media (max-width: 1280px) {
+  .last_1 {
+    height: 125px;
   }
 }
 
@@ -116,11 +110,36 @@ dialog div div {
     height: 220px;
   }
 
-  dialog {
+  dialog div div {
     font-size: 0.75rem;
+  }  
+}
+
+@media (max-width: 640px) {
+  .outer_container {
+    width: 320px;
+    gap: 25px;
+    padding-top: 6vh;
   }
 
-  .last {
+  .last_1 {
     height: 180px;
   }
 }
+
+@media (max-width: 320px) {
+  .container {
+    width: 110px;
+    height: 125px;
+  }
+
+  .last_2 {
+    height: 180px;
+  }
+
+  .outer_container {
+    width: 250px;
+    gap: 30px;
+  }
+}
+
