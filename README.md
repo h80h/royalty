@@ -1,1 +1,1 @@
-these kemonokaki are so beautiful <3
+these kemonokaki are so cute >ω<
